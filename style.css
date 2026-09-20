@@ -1,5 +1,253 @@
-* {
+*,
+::before,
+::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --brand-color: #2563eb;
+  --heading-color: #1c282b;
+  --body-color: #374151;
+  --meta-color: #6a7282;
+  --forground-color: #f1f3f5;
+  --border-color: #d1d5db;
+  --disabled-color: #9ca3af;
+  --success-main: #16a34a;
+  --success-bg: #16a34a;
+  --error-main: #dc2626;
+  --error-bg: #fef2f2;
+}
+
+html {
+  font-size: 16px;
+}
+
+html,
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialised;
+  width: 100%;
+  background-color: var(--forground-color);
+  color: var(--body-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2.5rem;
+  background-color: #fff;
+  color: var(--brand-color);
+  font-size: 22px;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 15%;
+  margin: 0;
+  min-height: 0;
+}
+
+.todo__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  min-height: 0;
+  background-color: #fff;
+  border-radius: 18px;
+}
+
+.todo__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-width: 40%;
+  height: 100%;
+  margin-top: 6dvh;
+  min-height: 0;
+}
+
+.todo__wrapper h3 {
+  font-size: 24px;
+  color: var(--heading-color);
+}
+
+.task__input {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.form__input {
+  flex: 1;
+  padding: 6px;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: var(--border-color);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form__input:focus {
+  outline: none;
+  border-color: var(--brand-color);
+}
+
+.form__input:focus-within {
+  outline: none;
+}
+
+.form__input::placeholder {
+  color: var(--meta-color);
+}
+
+.btn__add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  border: none;
+  margin-left: 1rem;
+  background-color: var(--brand-color);
+  color: var(--forground-color);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.todo__list--container {
+  flex: 1;
+  width: 100%;
+  margin: 1rem 0;
+  min-height: 0;
+}
+
+.todo__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-block-start: 0.75rem;
+  margin-block-end: 0.75rem;
+  padding: 8px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.item--container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.item--container input[type="checkbox"] {
+  /* appearance: none;
+  -webkit-appearance: none; */
+  margin: 0;
+
+  width: 1.05rem;
+  height: 1.05rem;
+
+  background-color: transparent;
+  accent-color: var(--meta-color);
+
+  display: grid;
+  place-content: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.item--container.completed .todo__text {
+  color: var(--meta-color);
+  text-decoration: line-through;
+}
+
+.btn__delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+  background-color: transparent;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+}
+
+.task__empty {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 3rem;
+  text-align: center;
+  visibility: visible;
+}
+
+.task__empty.hide {
+  display: none;
+  visibility: hidden;
+}
+
+.bottom__info {
+  width: 40%;
+  margin-bottom: 6dvh;
+}
+
+.bottom__info p:first-child {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--heading-color);
+}
+
+.bottom__info p:last-child {
+  font-size: 14px;
+  color: var(--meta-color);
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 2.5rem;
+  background-color: var(--brand-color);
+  color: #fff;
 }

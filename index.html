@@ -3,11 +3,101 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Todo App</title>
   </head>
   <body>
-    <h1>Todo List</h1>
+    <div class="container">
+      <header class="header">
+        <h1>Todo App</h1>
+      </header>
+
+      <main class="main">
+        <div class="todo__container">
+          <div class="todo__wrapper">
+            <h3>Your Todo List</h3>
+            <div class="task__input">
+              <input
+                id="new-task"
+                type="text"
+                placeholder="Add New Task"
+                class="form__input"
+              />
+              <button class="btn__add">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-plus"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5v14" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="todo__list--container">
+              <ul class="todo__list">
+                <li class="task__empty">
+                  You have no task in your todo list. <br />
+                  Start adding tasks!
+                </li>
+                <!-- <li class="list__item">
+                  <div class="item--container">
+                    <input type="checkbox" />
+                    <span class="todo__text"
+                      >This is an example of task #1</span
+                    >
+                  </div>
+                  <button class="btn__delete">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-x"
+                    >
+                      <path d="M18 6 6 18" />
+                      <path d="m6 6 12 12" />
+                    </svg>
+                  </button>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+
+          <div class="bottom__info">
+            <p>Your remaining tasks: <span id="task__counter">3</span></p>
+            <p id="quote">
+              "Doing what you love is the connerstone of having abundance in
+              your life." - <span class="quote-author">Wayne Dyer</span>
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>JavaScript Practicals</p>
+        <p>&copy; 2026 | Todo App</p>
+      </footer>
+    </div>
 
     <script src="script.js"></script>
   </body>
