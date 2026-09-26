@@ -20,7 +20,10 @@ const saveTask = (tasks) =>
 // 4. On page load, check localStorage and load existing tasks
 // localStorage.clear();
 // Add new task
-btnAddEl.addEventListener("click", () => {
+
+const welcomeMesge = prompt("welcome Kunle");
+
+const name = btnAddEl.addEventListener("click", () => {
   const text = formInputEl.value.trim();
   if (!text) return;
 
