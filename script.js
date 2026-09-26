@@ -147,8 +147,30 @@ async function getQuote() {
   }
 }
 
+function getUserName() {
+  // 1. check localStorage if name already saved
+  let storedName = localStorage.getItem("name");
+
+  if (!storedName) {
+    // 2. if name not stored, get user name - prompt
+    let name = prompt("Enter your name");
+    while (!name) {
+      name = prompt("Enter your name");
+    }
+    // 3. store it in localStorage
+    localStorage.setItem("name", name);
+    storedName = localStorage.getItem("name");
+  }
+  // 4. display welcome message with the name of user
+  document.getElementById("welcome").textContent = `Welcome, ${storedName}`;
+}
+// localStorage.removeItem("name");
+
 displayTask();
 getQuote();
+getUserName();
+
+// CRUD
 
 /*
 localStorage.setItem("name", "John Doe");
